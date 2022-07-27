@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 
 <html>
-    <head></head>
+    <head>
+        <title>HTML & CSS</title>
+        <style>
+            body {background-color: royalblue; color: aliceblue}
+            h1 { text-align: center }
+            div { background-color: blueviolet; }
+            
+            /* to target a tag with "id" to style it specifically - use # in our CSS*/
+            #list-container { border-style: solid } 
+        </style>
+    </head>
     <body>
         <h1>My First Feature Commit</h1>
         <h2>My First Heading</h2>
@@ -9,12 +19,22 @@
         <h4>My First Heading</h4>
         <h5>My First Heading</h5>
         <br />
-        <p>My first paragrap</p>
+        <p>My first paragraph</p>
 
-        <div>
-            <p>Paragraph 2</p>
+        <div style="font-family:verdana; font-size: 18px;">
+            <p style="font-size: 12px;">Paragraph 2</p>
             <p>Paragraph 3</p>
-            <p>Paragraph 4</p>
+            <p style="font-family:courier">Paragraph 4</p>
+            <p><strong>Important Text: strong tag</strong></p>
+            <p><em>Emphasized Text: em tag</em></p>
+
+            <p><b>Bold Text: b tag</b></p>
+            <p><i>Italic Text: i tag</i></p>
+
+            <!-- Write your comments here -->
+
+            <p>x<sup>100</sup></p>
+            <p>h<sub>2</sub>o</p>
         </div>
 
         <div>
@@ -22,7 +42,6 @@
             <input type="number" />
             <input type="date" />
             <input type="file" />
-            <input type="date" />
             <input type="email" />
             <input type="password" />
         </div>
@@ -33,5 +52,24 @@
             <a href="#">My first link</a>
             <a href="https://google.com" target="_blank">My Google Link</a>
         </div>
+
+        <br />
+
+        <div id="list-container">
+            <ul>
+                <li>Milk</li>
+                <li>Orange</li>
+                <li>Apple</li>
+            </ul>
+
+            <ol>
+                <li>Go to class</li>
+                <li>Go to work</li>
+                <li>Go shopping</li>
+            </ol>
+        </div>
+
+        <p>My new paragraph <span style="font-family:courier">Inline Style - span tag</span></p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/F5mk_hbLsaM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </body>
 </html>
