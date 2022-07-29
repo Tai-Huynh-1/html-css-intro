@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>HTML & CSS</title>
         <style>
             body {background-color: royalblue; color: aliceblue}
             h1 { text-align: center }
-            div { background-color: blueviolet; }
+            /* div { background-color: blueviolet; } */
             
             /* to target a tag with "id" to style it specifically - use # in our CSS*/
             #list-container { border-style: solid; border-width: 6px ; background-color: red; } 
@@ -34,6 +33,7 @@
 
             .flex-box-example {
                 display: flex;
+                flex-direction: column;
                 list-style-type: none;
                 background-color: brown;
                 padding: 0px;
@@ -49,9 +49,32 @@
                 height: 20px;
                 background-color: green;
             }
+
+            .form-wrapper {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .registration-form {
+                background-color: rgb(29, 104, 155);
+                display: flex;
+                flex-direction: column;
+                width: 70%;
+                margin: 0 auto 0 auto;
+            }
+
+            .form-title {
+                margin: 20px 20px;
+                text-align: center;
+            }
         </style>
     </head>
     <body>
+        <nav>
+            <a href="#" target="_blank">
+                <img src="logo.svg" alt="logo" />
+            </a>
+        </nav>
         <h1 class="title" id="title" style="color: white !important">My First Feature Commit</h1>
         <h2>My First Heading</h2>
         <h3>My First Heading</h3>
@@ -125,5 +148,41 @@
             <div class="list-item">3</div>
         </ul>
     
+        <div class="form-wrapper">
+        <form class="registration-form">
+            <h3 class="form-title">
+                <strong>
+                    Registration Form
+                </strong>
+            </h3>
+            <hr />
+
+            <div>
+                <input name="firstName" type="text" />
+                <input name="lastName" type="text" />
+                <input name="email" type="email" />
+                <input name="password" type="password" />
+            </div>
+
+            <div>
+                <label>
+                    <input name="rememberMe" type="checkbox" />
+                </label>
+            </div>
+
+            <div>
+                <button type="submit">Register</button>
+            </div>
+
+            <div>
+                <a href="#">Have an account already? Log in here.</a>
+                <a href="#">Return to HomePage</a>
+            </div>
+
+            <hr />
+
+        </form>
+    </div>
+        
     </body>
 </html>
