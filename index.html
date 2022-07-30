@@ -47,7 +47,7 @@
             .list-item {
                 width: 20px;
                 height: 20px;
-                background-color: green;
+                background-color: rgb(191, 64, 64);
             }
 
             .form-wrapper {
@@ -66,6 +66,37 @@
             .form-title {
                 margin: 20px 20px;
                 text-align: center;
+            }
+
+            .input-group {
+                display: flex;
+                flex-direction: column;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #email, #firstName, #lastName, #password {
+                display: block;
+            }
+
+            .firstName, .lastName, .email, .password, .rememberMe {
+                margin-bottom: 10px;
+            }
+
+            .register-btn-container {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+
+            .link-container {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .link {
+                margin-bottom: 20px;
             }
         </style>
     </head>
@@ -148,7 +179,7 @@
             <div class="list-item">3</div>
         </ul>
     
-        <div class="form-wrapper">
+    <div class="form-wrapper">
         <form class="registration-form">
             <h3 class="form-title">
                 <strong>
@@ -157,26 +188,40 @@
             </h3>
             <hr />
 
-            <div>
-                <input name="firstName" type="text" />
-                <input name="lastName" type="text" />
-                <input name="email" type="email" />
-                <input name="password" type="password" />
-            </div>
-
-            <div>
-                <label>
-                    <input name="rememberMe" type="checkbox" />
+            <div class="input-group">
+                <label for="firstName" class="firstName">
+                    First Name: 
+                    <input id="firstName" name="firstName" type="text" />
                 </label>
-            </div>
 
-            <div>
+                <label for="lastName" class="lastName">
+                    Last Name: 
+                    <input id="lastName" name="lastName" type="text" />
+                </label>
+
+                <label for="email" class="email">
+                    Email: 
+                    <input id="email" name="email" type="email" />
+                </label>
+                <label for="password" class="password">
+                    Password: 
+                    <input id="password" name="password" type="password" />  
+                </label>
+
+                <label for="rememberMe" class="rememberMe">
+                    <input id="rememberMe" name="rememberMe" type="checkbox" />
+                    Remember Me
+                </label>
+
+            </div>
+            
+            <div class="register-btn-container">
                 <button type="submit">Register</button>
             </div>
 
-            <div>
-                <a href="#">Have an account already? Log in here.</a>
-                <a href="#">Return to HomePage</a>
+            <div class="link-container">
+                <a class="link" href="#">Have an account already? Log in here.</a>
+                <a class="link" href="#">Return to HomePage</a>
             </div>
 
             <hr />
