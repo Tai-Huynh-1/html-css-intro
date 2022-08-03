@@ -3,12 +3,12 @@
     <head>
         <title>HTML & CSS</title>
         <style>
-            body {background-color: royalblue; color: aliceblue}
-            h1 { text-align: center }
+            body {background-color: rgb(65, 105, 225, 1.0); color: aliceblue}
+            h1 { text-align: center; text-shadow: 2px 2px red }
             /* div { background-color: blueviolet; } */
             
             /* to target a tag with "id" to style it specifically - use # in our CSS*/
-            #list-container { border-style: solid; border-width: 6px ; background-color: red; } 
+            #list-container { border-style: solid; border-width: 6px ; background-color: red; box-shadow: 20px 10px 5px black } 
         
             /* to style "class" - we use "." */
             .grocery-list {color: blue; list-style-type: square; font-size: 20px}
@@ -97,6 +97,10 @@
             
             .link {
                 margin-bottom: 20px;
+            }
+
+            .submit {
+                padding: 20px
             }
         </style>
     </head>
@@ -216,7 +220,7 @@
             </div>
             
             <div class="register-btn-container">
-                <button type="submit">Register</button>
+                <button type="submit" class="submit">Register</button>
             </div>
 
             <div class="link-container">
