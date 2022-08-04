@@ -3,7 +3,49 @@
     <head>
         <title>HTML & CSS</title>
         <style>
-            body {background-color: rgb(65, 105, 225, 1.0); color: aliceblue}
+            body {background-color: #4169e1; color: aliceblue}
+            /* body {background-image: linear-gradient(to left, red, yellow, rgb(0, 128, 0, 1.0)); color: aliceblue} */
+
+            
+            .transition-div {
+                background-color: aquamarine;
+                width: 100px;
+                height: 100px;
+                transition: width 3s, height 5s;
+            }
+
+            .transition-div:hover {
+                width: 300px;
+                height: 500px;
+                transform: rotate(15deg);
+                /* cursor: ; */
+            }
+
+        
+
+
+
+            @media only screen and (min-width: 600px) {
+                body {
+                    background-color: rebeccapurple;
+                }
+
+                h1 {color: yellow}
+            }
+
+            @media only screen and (min-width: 1200px) {
+                body {
+                    background-color: darkcyan;
+                }
+
+                h1 {color: darkturquoise}
+
+                .first-button {
+                    background-color: yellow;
+                }
+            }
+
+
             h1 { text-align: center; text-shadow: 2px 2px red }
             /* div { background-color: blueviolet; } */
             
@@ -15,8 +57,8 @@
             .todo-list {background-color: aquamarine;}
 
 
-            #title {color: red !important}
-            .title {color: yellow !important}
+            /* #title {color: red !important}
+            .title {color: yellow !important} */
 
             .box-model {
                 border-width: 3px;
@@ -29,6 +71,7 @@
             .first-button {
                 margin: 20px;
                 padding: 20px 40px;
+                background-color: rgb(127, 180, 255);
             }
 
             .flex-box-example {
@@ -106,11 +149,15 @@
     </head>
     <body>
         <nav>
-            <a href="#" target="_blank">
+            <a class="logo-link" href="#" target="_blank">
                 <img src="logo.svg" alt="logo" />
             </a>
         </nav>
-        <h1 class="title" id="title" style="color: white !important">My First Feature Commit</h1>
+        <h1 class="title" id="title">My First Feature Commit</h1>
+        <a href="/pages/contact-us.html">Go to contact page</a>
+
+        <div class="transition-div"></div>
+
         <h2>My First Heading</h2>
         <h3>My First Heading</h3>
         <h4>My First Heading</h4>
