@@ -167,4 +167,65 @@ const dog = {
 // delete dog.name // use delete keyword
 // console.log(dog)
 
+
+// function hoisting
+// myFunc()
+
+// function myFunc() {
+//     console.log("hi")
+// }
+
+// comparison operator
+// console.log(8 === '8') // false, false, false, false
+// console.log(8 === 'eight') // false, false, false, false
+
+// console.log(8 == '8') // true, true, true , true
+// console.log(8 == 'eight') // false, false, false, false
+
+// function modify(arr) {
+//     arr.push(100, 200, 300, 400)
+//     arr.shift()
+//     return arr
+// }
+
+// console.log(modify([9000]))
+
+// const user = {
+// 	id: 1,
+// 	name: "David",
+// 	email: "dave@gmail.com",
+// 	address: {
+// 		mailing: "123 Main St",
+// 		shipping: "789 Main St"
+// 	},
+// 	cart: ["banana", "milk", "napkins"]
+// }
+// user.address.mailing = user.address.shipping
+// user.address.mailing = "789 Main St"
+
+// console.log(user)
+
+
+// pass by reference to objects vs value
+// const a = 3
+// a = 5
+
+// let b = 3
+// b = 5
+
+// let myArr = [9, 8, 7]
+// const myArr = [9, 8, 7]
+// myArr.push(10, 11, 12)
+// myArr = [9, 8, 7, 10, 11, 12]
+// console.log(myArr)
+
+
 // Looping with for loops over objects and arrays
+// arr
+const myArr = [[1, 2, 3], [4, 5, 6, 7]]
+// const b = [100, 500, 600, 700]
+for (let i = 0; i < myArr.length; i++) {
+    for (let j = 0; j < myArr[i].length; j++ ) {
+        console.log(myArr[i][j])
+    }
+}
