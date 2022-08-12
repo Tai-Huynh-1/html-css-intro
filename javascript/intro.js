@@ -22,16 +22,16 @@
 
 // let myVar = 3
 
-function isOdd(number) {
-    // const myVar = 10
-    const remainder = number % 2
-    console.log(myVar)
-    if (remainder === 1) {
-        return true
-    } else {
-        return false
-    }
-}
+// function isOdd(number) {
+//     // const myVar = 10
+//     const remainder = number % 2
+//     console.log(myVar)
+//     if (remainder === 1) {
+//         return true
+//     } else {
+//         return false
+//     }
+// }
 
 // console.log(isOdd(55))
 
@@ -101,22 +101,22 @@ function isOdd(number) {
 // console.log(typeof var2)
 
 // UPDATING objects and arrays
-const dog = {
-    numOfLegs: 4,
-    numOfEyes: 2,
-    name: "Sparky",
-    isAlive: true,
-    // 
-    bark: function () {
-        console.log("ruff ruff")
-    },
-    address: {
-        streetNumber: '123',
-        streetName: 'Main St'
-    },
-    toys: ["bone", "toy2", 100, true], // array
-    "greeting": "ruff"
-}
+// const dog = {
+//     numOfLegs: 4,
+//     numOfEyes: 2,
+//     name: "Sparky",
+//     isAlive: true,
+//     // 
+//     bark: function () {
+//         console.log("ruff ruff")
+//     },
+//     address: {
+//         streetNumber: '123',
+//         streetName: 'Main St'
+//     },
+//     toys: ["bone", "toy2", 100, true], // array
+//     "greeting": "ruff"
+// }
 // dog.birthDate = '06/06/2000' // add new key
 // console.log(dog)
 // dog.name = "RoadRunner"
@@ -222,10 +222,107 @@ const dog = {
 
 // Looping with for loops over objects and arrays
 // arr
-const myArr = [[1, 2, 3], [4, 5, 6, 7]]
-// const b = [100, 500, 600, 700]
-for (let i = 0; i < myArr.length; i++) {
-    for (let j = 0; j < myArr[i].length; j++ ) {
-        console.log(myArr[i][j])
-    }
+// const myArr = [[1, 2, 3], [4, 5, 6, 7]]
+// // const b = [100, 500, 600, 700]
+// for (let i = 0; i < myArr.length; i++) {
+//     for (let j = 0; j < myArr[i].length; j++ ) {
+//         console.log(myArr[i][j])
+//     }
+// }
+
+
+// Same situation as #1, but your function will now print the numbers in reverse and only 10 to 1. (10, 9, 8, 7, 6…) . 
+// You will test every function by passing in num1 = 1, num2 = 100
+// function reverse(num1, num2) {
+//     for (let i = num2; i > num1-1; i--) {
+//         if (i <= 10 && i > 0) {
+//             console.log(i)
+//             console.log("=============================")
+//         }
+//     }
+// }
+// reverse(1, 100)
+
+// Write a function that takes in an array of numbers and uses the forEach() or map() to multiply every number by 100 only if the number is even - 
+// if the number is odd then it will return the original number .
+// The function should return a new array with the result. The original array should not be mutated.
+
+// const number = [11, 22, 33, 44,]
+// const mapped = number.map(function(el) {
+//     return el * 100
+// })
+// number.forEach(function(el) {
+//     console.log(el * 100)
+// })
+// console.log(number.length)
+// console.log(number)
+// const number = [11, 22, 33, 44,]
+// function mapThrough (arr) {
+//     const tracker = []
+//     for (let i = 0; i < arr.length; i++) {
+//         const isEven = arr[i]%2 === 0
+//         if (isEven) {
+//             // your number is even
+//             tracker.push(arr[i] * 100)
+//         } else {
+//             // your number is odd
+//             tracker.push(arr[i])
+//         }
+//     }
+//     return tracker
+
+    // return arr.map(function(el) {
+    //     const isEven = el%2 === 0
+    //     if (isEven) {
+    //         // your number is even
+    //         return el * 100
+    //     } else {
+    //         // your number is odd
+    //         return el
+    //     }
+    // })
+    // const e = []
+    // arr.forEach(function(el) {
+    //          const isEven = el%2 === 0
+    //     if (isEven) {
+    //         // your number is even
+    //          e.push(el * 100)
+    //     } else {
+    //         // your number is odd
+    //         e.push(el)
+    //     }
+    // })
+    // return e
+// }
+// console.log(mapThrough(number))
+
+// Write a function to see if a number given is divisible by 55
+
+// function divisibleBy55 (number) {
+//     let result = number % 55
+//     if (result === 0) {
+//         return true
+//     } else {
+//         return false
+//     }
+// }
+
+// console.log(divisibleBy55(110))
+
+// function divisibleBy55(number) {
+//     return (number % 55 === 0) ? true : false
+// }
+// console.log(divisibleBy55(50))
+
+// const checkLength = "Waterfall"
+// console.log(checkLength.length)
+
+// function checkLength (string) {
+//     return string.length
+// }
+
+function concat (str1, str2) {
+    return str1 + " " + str2
 }
+
+console.log(concat("hello", "world"))
