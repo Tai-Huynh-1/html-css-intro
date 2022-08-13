@@ -321,8 +321,81 @@
 //     return string.length
 // }
 
-function concat (str1, str2) {
-    return str1 + " " + str2
+// function concat (str1, str2) {
+//     return str1 + " " + str2
+// }
+
+// console.log(concat("hello", "world"))
+
+// Given an array, write a function that loops through the array and
+// print each element in the second layer.
+// const arr = [ [ 1, 2, 3, [ 4, 5, 6 ] ] , [ [ 7, 8, 9 ] , [ 10, 11, 12 ] ] , [ 'a', 'b', 'c' ]  ]
+// Ex. output should be: 1, 2, 3, [4, 5, 6], [ 7, 8, 9 ] , [ 10, 11, 12 ], a, b, c
+
+// function loopThrough (arr) {
+    
+// }
+// loopThrough(arr)
+
+// const user = {
+//     name: "Jack",
+//     email: "jack@gmail.com",
+//     age: 25
+// }
+
+// function loopThroughObject (object) {
+//     for (const key in object) {
+//         console.log(`key is: ${key}`)
+//         console.log(`the value is: ${object[key]}`)
+//     }
+// }
+// loopThroughObject(user)
+
+// while loop
+const arr = [ [ 1, 2, 3, [ 4, 5, 6 ] ] , [ [ 7, 8, 9 ] , [ 10, 11, 12 ] ] , [ 'a', 'b', 'c' ]  ]
+
+// function myWhileLoop (arr) {
+//     // for (let i = 0; i < arr.length; i++)
+//     let i = 0;
+//     while (i < arr.length) {
+//         console.log(arr[i])
+//         i++
+//     }
+// }
+
+// myWhileLoop(arr)
+
+function myWhileLoop2 (num1, num2) {
+    let i = num1
+    while (i <= num2) {
+        console.log(i)
+        if (i === 10) {
+            break
+        }
+        i++
+    }
 }
 
-console.log(concat("hello", "world"))
+// myWhileLoop2(5, 20)
+
+// switch statement
+// function customSwitch (dayOfWeek) {
+//     switch (dayOfWeek) {
+//         case "Monday":
+//             console.log("The week just started.")
+//             break
+//         case "Wednesday":
+//             // return "It's mid week"
+//             console.log("It's mid week")
+//             break
+//         case "Sunday":
+//             console.log("The weekend is over")
+//             break
+//         default:
+//             console.log("That's not a proper day of week")
+//     }
+// }
+// customSwitch("Sunday")
+
+// const arr = n.map(function() {})
+// console.log(arr)
