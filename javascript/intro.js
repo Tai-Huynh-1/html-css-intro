@@ -352,7 +352,7 @@
 // loopThroughObject(user)
 
 // while loop
-const arr = [ [ 1, 2, 3, [ 4, 5, 6 ] ] , [ [ 7, 8, 9 ] , [ 10, 11, 12 ] ] , [ 'a', 'b', 'c' ]  ]
+// const arr = [ [ 1, 2, 3, [ 4, 5, 6 ] ] , [ [ 7, 8, 9 ] , [ 10, 11, 12 ] ] , [ 'a', 'b', 'c' ]  ]
 
 // function myWhileLoop (arr) {
 //     // for (let i = 0; i < arr.length; i++)
@@ -365,16 +365,16 @@ const arr = [ [ 1, 2, 3, [ 4, 5, 6 ] ] , [ [ 7, 8, 9 ] , [ 10, 11, 12 ] ] , [ 'a
 
 // myWhileLoop(arr)
 
-function myWhileLoop2 (num1, num2) {
-    let i = num1
-    while (i <= num2) {
-        console.log(i)
-        if (i === 10) {
-            break
-        }
-        i++
-    }
-}
+// function myWhileLoop2 (num1, num2) {
+//     let i = num1
+//     while (i <= num2) {
+//         console.log(i)
+//         if (i === 10) {
+//             break
+//         }
+//         i++
+//     }
+// }
 
 // myWhileLoop2(5, 20)
 
@@ -399,3 +399,47 @@ function myWhileLoop2 (num1, num2) {
 
 // const arr = n.map(function() {})
 // console.log(arr)
+
+// Write a function to determine the maximum amount of profit I can make within a 10 days period when I buy and sell a stock.
+// The function takes in an array of stock prices. For ex: [ 315, 50, 314, 684, 100, 648, 132, 50, 98, 45 ]
+// The array contains 10 numbers (stock prices). $315 is the price of the stock on the 1st day, $100 is the price of the stock on the 5th day and $45 is the price of the stock on the 10th day.
+// Your function needs to return the maximum profit I can make from any 10 trading day period given a similar array of numbers like above. In the above example, the maximum profit 
+// I can make is buy on the 2nd day at a price of $50 and sell on the 4th day at $684 for a profit of $684-$50 = $634.
+// Hint: You might want to iterate/loop over the array and keep track of some variables outside of the loop, then return that variable at the under of your function.
+const arr = [ 315, 50, 314, 684, 100, 648, 132, 50, 98, 45 ] // time complexity O(n^2)
+function findMaxProfit(arr) {
+    let maxProfit = 0
+    let minPrice = arr[0] // 315 => 50
+    let maxPrice = 0
+    
+    arr.forEach(el => {
+        if (el < minPrice) {
+            minPrice = el
+        } else {
+            if (maxPrice - minPrice > maxProfit) {
+                
+            }
+        }
+    })
+
+    return maxProfit
+}
+console.log(findMaxProfit(arr))
+
+// function findMaxProfit(arr) {
+//     let maxProfit = 0
+//     let minPrice = arr[0] // 315 => 50
+//     let maxPrice = arr[0]
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i+1; j < arr.length; j++) {
+//             if (minPrice > arr[i]) {
+//                 minPrice = arr[i]
+//             }
+//             if (maxPrice < arr[j]) {
+//                 maxPrice = arr[j]
+//             }
+//             maxProfit = maxPrice - minPrice
+//         }
+//     }
+//     return maxProfit
+// }
