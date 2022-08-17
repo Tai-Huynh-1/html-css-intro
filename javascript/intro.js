@@ -410,15 +410,13 @@ const arr = [ 315, 50, 314, 684, 100, 648, 132, 50, 98, 45 ] // time complexity 
 function findMaxProfit(arr) {
     let maxProfit = 0
     let minPrice = arr[0] // 315 => 50
-    let maxPrice = 0
     
-    arr.forEach(el => {
+    arr.forEach((el, idx) => {
         if (el < minPrice) {
             minPrice = el
-        } else {
-            if (maxPrice - minPrice > maxProfit) {
-                
-            }
+        }
+        if (arr[idx+1] - minPrice > maxProfit) {
+            maxProfit = arr[idx+1] - minPrice
         }
     })
 
