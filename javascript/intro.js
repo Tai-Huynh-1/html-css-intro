@@ -406,23 +406,23 @@
 // Your function needs to return the maximum profit I can make from any 10 trading day period given a similar array of numbers like above. In the above example, the maximum profit 
 // I can make is buy on the 2nd day at a price of $50 and sell on the 4th day at $684 for a profit of $684-$50 = $634.
 // Hint: You might want to iterate/loop over the array and keep track of some variables outside of the loop, then return that variable at the under of your function.
-const arr = [ 315, 50, 314, 684, 100, 648, 132, 50, 98, 45 ] // time complexity O(n^2)
-function findMaxProfit(arr) {
-    let maxProfit = 0
-    let minPrice = arr[0] // 315 => 50
+// const arr = [ 315, 50, 314, 684, 100, 648, 132, 50, 98, 45 ] // time complexity O(n^2)
+// function findMaxProfit(arr) {
+//     let maxProfit = 0
+//     let minPrice = arr[0] // 315 => 50
     
-    arr.forEach((el, idx) => {
-        if (el < minPrice) {
-            minPrice = el
-        }
-        if (arr[idx+1] - minPrice > maxProfit) {
-            maxProfit = arr[idx+1] - minPrice
-        }
-    })
+//     arr.forEach((currPrice, idx) => {
+//         if (currPrice < minPrice) {
+//             minPrice = currPrice
+//         }
+//         if (arr[idx+1] - minPrice > maxProfit) {
+//             maxProfit = arr[idx+1] - minPrice
+//         }
+//     })
 
-    return maxProfit
-}
-console.log(findMaxProfit(arr))
+//     return maxProfit
+// }
+// console.log(findMaxProfit(arr))
 
 // function findMaxProfit(arr) {
 //     let maxProfit = 0
@@ -441,3 +441,55 @@ console.log(findMaxProfit(arr))
 //     }
 //     return maxProfit
 // }
+
+// fib(n) = fib(n-1) + fib(n-2)
+// Ex: (0 + 1) + 1 + 2 + 3 + 5 => [0, 1, 1, 2, 3, 5, ...]
+// fib(0) = 0; fib(1) = 1
+
+// function fib(n) { // n = 5
+//     if (n === 0) {
+//         return 0
+//     }
+
+//     if (n === 1) {
+//         return 1
+//     }
+
+//     return fib(n-1) + fib(n-2) 
+// }
+
+// function fib2(n) {
+//     const fibNum = [0, 1, 1]
+//     for (let i = 3; i <= n; i++) {
+//         fibNum[i] = fibNum[i-2] + fibNum[i-1]
+//     }
+//     return fibNum[n]
+// }
+// // fib(3) => 2 => will generate fib number at any n-th index
+// console.log(fib2(0))
+// number, string, boolean, undefined, null
+// JS goes through 2 phases => 1. Memory allocation => 2. Execution
+// hoisting => behavior that makes it seem like your var and function declarations gets brought to the top of the code file
+
+var myVar = 1
+console.log(myVar)
+
+// console.log(randomVar)
+
+function myFunc(){
+    console.log("my func is hoisted")
+}
+
+function makeHeavyComputation() {
+    // doing something that takes a long time => pause for 5 seconds
+    // makeHeavyComputation()
+    // return 3
+}
+
+myFunc()
+
+console.log(3)
+
+console.log("finished")
+
+
