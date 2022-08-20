@@ -471,25 +471,166 @@
 // JS goes through 2 phases => 1. Memory allocation => 2. Execution
 // hoisting => behavior that makes it seem like your var and function declarations gets brought to the top of the code file
 
-var myVar = 1
-console.log(myVar)
+// var myVar = 1
+// console.log(myVar)
 
-// console.log(randomVar)
+// // console.log(randomVar)
 
-function myFunc(){
-    console.log("my func is hoisted")
+// function myFunc(){
+//     console.log("my func is hoisted")
+// }
+
+// function makeHeavyComputation() {
+//     // doing something that takes a long time => pause for 5 seconds
+//     // makeHeavyComputation()
+//     // return 3
+// }
+
+// myFunc()
+
+// console.log(3)
+
+// console.log("finished")
+
+
+// N-th Tribonacci Sequence. (Like the Fibonacci numbers but instead of last 2 values, you add the last 3 values)
+// Given: T(0) = 0, T(1) = 1, T(2) = 1
+// Write a function to find the n-th tribonacci number and return it
+// When n = 4, your function should return 4 - trib(4) = 1 +1 +2
+// Find both recursive and iterative solution
+
+// function trib(n) {
+//     const seq = [0, 1, 1]
+//     for (let i = 3; i <= n; i++) {
+//         seq[i] = seq[i-1] + seq[i-2] + seq[i-3]
+//     }
+//     return seq[n]
+
+
+//     // if (n === 0) return 0;
+//     // if (n === 1 || n === 2) return 1
+//     // return trib(n-1) + trib(n-2) + trib(n-3)
+// }
+// console.log(trib(4))
+
+
+// You are climbing a staircase and it takes you n number of steps to reach the top. Each time you can either climb 1 or 2 steps, how many distinct ways can you climb to the top? Write a function to return the number of distinct ways you can climb to the top. You only need to find 1 solution, either recursive or iterative.
+// Ex: When n = 2, your function should return 2. There are 2 ways to climb to the top. 
+// 1 step + 1 step
+// 2 steps
+// Ex: n = 3 will return 3. 3 distinct ways to climb to the top.
+// 1 step + 1 step + 1 step
+// 1 step + 2 steps
+// 2 steps + 1 step
+
+// function stairs(n) {
+//     const arr = []
+//     arr[0] = 0
+//     arr[1] = 1
+//     arr[2] = 2
+//     for (let i = 3; i <= n; i++) {
+//         arr[i] = arr[i-1] + arr[i-2]
+//     }
+//     return arr[n]
+// }
+// console.log(stairs(10))
+
+// Adding Numbers
+// Given an integer “num”, repeatedly add all its digits until the result has only one digit and return it.
+// Find a solution using any method.
+// Ex: num = 38 will return 2. 
+// 38 → 3 + 8 → 11
+// 11 → 1 + 1 → 2
+// Since 2 has only 1 digit, return it
+// Ex: num = 0 will return 0
+
+// function repeatAdd(num) {
+//     if (num === 0) return 0
+//     if (num.toString().length === 1) return num
+
+//     const arr = num.toString().split("") // 38 -> '38' -> ['3', '8']
+//     // let sum = 0
+//     // arr.forEach(digit => {
+//     //     sum = sum + parseInt(digit)
+//     // })
+//     // const sum = arr.reduce(function(accum, curr) {return accum + parseInt(curr)}, 0) // 3 + 8 = 11
+//     const sum = arr.reduce((accum, curr) => (accum + parseInt(curr)), 0)
+//     // () => {return 3} // anonymous (no name given to the function)
+//     // () => 3   // implicitly returns the value if written inline without having to use the return keyword
+//     // const myArrowFunc = () => {} // named arrow function, stored in a variable
+//     // const myArrowFunc = () =>    // named arrow function, stored in a variable
+//     // To use arrow functions, myArrowFunc()
+
+//     if (sum.toString().length === 1) {
+//         return sum
+//     } else {
+//         return repeatAdd(sum)
+//     }
+
+//     // let sum = 0;
+//     // while (num > 0 || sum > 9) {
+//     //     if (num === 0) {
+//     //         n = sum
+//     //         sum = 0
+//     //     }
+//     //     sum = sum + (num % 10)
+//     //     num = Math.floor(num / 10)
+//     // }
+//     // return sum
+// }
+
+// console.log(repeatAdd(38))
+
+// ES6 Features: Default Parameters
+// const stairs = (n = 10) => {
+//     const arr = [0, 1, 2]
+//     for (let i = 3; i <= n; i++) {
+//         arr[i] = arr[i-1] + arr[i-2]
+//     }
+//     return arr[n]
+// }
+// console.log(stairs())
+
+// ES6: Template strings
+// const greeting = (name = "Default Name") => "Hello " + name
+// const greeting = (name = "Default Name") => `Hello ${name}`
+// console.log(greeting("David"))
+// console.log(greeting())
+
+// ES6: Rest Parameters
+// const sum = (...args) => {
+//     console.log('args', args)
+//     return args.reduce((accum, curr) => (accum + curr), 0)
+// }
+// console.log(sum(1, 2, 3, 4, 5, 6, 7))
+
+// ES6: Spread Operator
+const concatArr = (arr1, arr2) => [...arr1, ...arr2]
+// console.log(concatArr([1, 2, 3], ['x', 'y', 'z']))
+// Works on objects as well
+
+const spreadObjects = (obj1, obj2) => ({...obj1, ...obj2}) // {name: 'dog'}
+// console.log(spreadObjects({name: "cat"}, {name: "dog"}))
+
+// ES6 Object destructuring (arrays and objects)
+const car = {
+    year: 2000,
+    make: 'toyota',
+    model: 'celica',
+    address: {
+        mailing: '123 Main St',
+        shipping: '321 Wall St'
+    }
 }
+// const modelName = car.model
+// const modelYear = car.year
+// console.log(modelName)
+// console.log(modelYear)
+const year = 1500
+const { model, year: yearFromCar, address: { mailing, shipping: shippingAddress } } = car // rename destructured keys
+// console.log(shippingAddress)
+// console.log(car)
 
-function makeHeavyComputation() {
-    // doing something that takes a long time => pause for 5 seconds
-    // makeHeavyComputation()
-    // return 3
-}
-
-myFunc()
-
-console.log(3)
-
-console.log("finished")
-
-
+const cart = ['milk', 'yogurt', 'berries']
+const [ , , item2] = cart
+console.log(item2)
