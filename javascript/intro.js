@@ -605,32 +605,87 @@
 // console.log(sum(1, 2, 3, 4, 5, 6, 7))
 
 // ES6: Spread Operator
-const concatArr = (arr1, arr2) => [...arr1, ...arr2]
-// console.log(concatArr([1, 2, 3], ['x', 'y', 'z']))
-// Works on objects as well
+// const concatArr = (arr1, arr2) => [...arr1, ...arr2]
+// // console.log(concatArr([1, 2, 3], ['x', 'y', 'z']))
+// // Works on objects as well
 
-const spreadObjects = (obj1, obj2) => ({...obj1, ...obj2}) // {name: 'dog'}
-// console.log(spreadObjects({name: "cat"}, {name: "dog"}))
+// const spreadObjects = (obj1, obj2) => ({...obj1, ...obj2}) // {name: 'dog'}
+// // console.log(spreadObjects({name: "cat"}, {name: "dog"}))
 
-// ES6 Object destructuring (arrays and objects)
-const car = {
-    year: 2000,
-    make: 'toyota',
-    model: 'celica',
-    address: {
-        mailing: '123 Main St',
-        shipping: '321 Wall St'
-    }
-}
+// // ES6 Object destructuring (arrays and objects)
+// const car = {
+//     year: 2000,
+//     make: 'toyota',
+//     model: 'celica',
+//     address: {
+//         mailing: '123 Main St',
+//         shipping: '321 Wall St'
+//     }
+// }
 // const modelName = car.model
 // const modelYear = car.year
 // console.log(modelName)
 // console.log(modelYear)
-const year = 1500
-const { model, year: yearFromCar, address: { mailing, shipping: shippingAddress } } = car // rename destructured keys
-// console.log(shippingAddress)
-// console.log(car)
+// const year = 1500
+// const { model, year: yearFromCar, address: { mailing, shipping: shippingAddress } } = car // rename destructured keys
+// // console.log(shippingAddress)
+// // console.log(car)
 
-const cart = ['milk', 'yogurt', 'berries']
-const [ , , item2] = cart
-console.log(item2)
+// const cart = ['milk', 'yogurt', 'berries']
+// const [ , , item2] = cart
+// console.log(item2)
+
+// const person = {
+//     name: "Taylor",
+//     greet() {
+//         console.log(`Hello! My name is ${this.name}`)
+//     }
+// }
+
+// person.greet()
+
+const user1 = {
+    name: "Jake",
+    address: {
+        mailing: "123 Main St",
+        shipping: {
+            cart: true
+        }
+    },
+}
+
+const user2 = {
+    name: "Bob",
+    address: {
+        mailing: "123 Main St",
+        shipping: {
+            cart: true
+        }
+    },
+}
+// Constructor functions used to create new objects
+function User(name, mailing, shipping, phone) {
+    this.name = name;
+    this.address = {
+        mailing: mailing,
+        shipping: shipping
+    }
+    this.phoneNo = phone
+    this.setGender = function (gender) {
+        this.gender = gender
+    }
+    this.getGender = function () {
+        return this.gender
+    }
+    this.greet = function () {
+        return `Hello, my name is ${this.name}`
+    }
+}
+
+const userA = new User("Bob", "789 Main St", "789 Wall St", '111-111-1111')
+const userB = new User("Taylor", "", "123 Wall St", '999-999-9999')
+console.log(userA)
+console.log(userB)
+userB.setGender('female')
+console.log(userB.getGender())
+console.log(userA.greet())
