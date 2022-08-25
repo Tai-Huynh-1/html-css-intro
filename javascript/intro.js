@@ -662,30 +662,89 @@ const user2 = {
             cart: true
         }
     },
-}
-// Constructor functions used to create new objects
-function User(name, mailing, shipping, phone) {
-    this.name = name;
-    this.address = {
-        mailing: mailing,
-        shipping: shipping
-    }
-    this.phoneNo = phone
-    this.setGender = function (gender) {
-        this.gender = gender
-    }
-    this.getGender = function () {
-        return this.gender
-    }
-    this.greet = function () {
-        return `Hello, my name is ${this.name}`
-    }
+    greet: function () {console.log(`Hi my name is Bob`)}
 }
 
-const userA = new User("Bob", "789 Main St", "789 Wall St", '111-111-1111')
-const userB = new User("Taylor", "", "123 Wall St", '999-999-9999')
-console.log(userA)
-console.log(userB)
-userB.setGender('female')
-console.log(userB.getGender())
-console.log(userA.greet())
+// Normal functions is camelCase
+function myFunc() {
+
+}
+
+// Constructor functions without custom parameters
+// function User () {
+//     this.name = "Dave";
+//     this.address = {
+//         mailing: "123 Main St",
+//         shipping: "321 Wall St"
+//     }
+
+//     this.greet = function () {
+//         return `Hi my name is ${this.name}`
+//     }
+// }
+
+// const userA = new User() // creating 1 instance of User {}
+// console.log('A', userA)
+// // console.log(userA.name)
+// // console.log(userA.address)
+// // console.log(userA.greet())
+
+// const userB = new User() // creating a 2nd instance of User
+// console.log('B', userB)
+// // console.log(userB.name)
+// // console.log(userB.address)
+// // console.log(userB.greet())
+
+
+// Constructor functions used to create new objects with distinct parameters
+// function User (name, mailing, shipping, phone) {
+//     this.name = name;
+//     this.address = {
+//         mailing,
+//         shipping
+//     }
+//     this.phoneNo = phone
+//     // method
+//     this.setGender = function (gender) { // setter function
+//         this.gender = gender
+//     }
+//     this.getGender = function () {
+//         return this.gender
+//     }
+//     this.greet = function () {
+//         return `Hello, my name is ${this.name}`
+//     }
+// }
+
+// const userA = new User("Bob", "789 Main St", "789 Wall St", '111-111-1111')
+// const userB = new User("Taylor", "", "123 Wall St", '999-999-9999')
+// // console.log(userA)
+// console.log(userB)
+// userB.setGender('female')
+// console.log(userB)
+// console.log(userB.getGender())
+// console.log(userA.greet())
+
+// OOP: Encapsulation - Making states / properties of an object private and only allow access via the object's method (setter / getter function)
+// OOP: Inheritance - Bundle common code into a parent class and extend to child classes
+
+function Animal () {
+    this.numOfEyes = 2
+    this.numOfTail = 1
+    this.numOfLegs = 4
+}
+
+Animal.prototype.eat = function() {console.log("nom nom")}
+
+function Dog (color) {
+    this.color = color
+}
+
+function Cat (color) {
+    this.color = color
+}
+Cat.prototype = Object.create(Animal.prototype)
+Cat.prototype.scratch = function() {console.log("scratch")}
+const tom = new Cat('orange')
+console.log(tom)
+
