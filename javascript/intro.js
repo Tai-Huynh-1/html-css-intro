@@ -728,23 +728,105 @@ function myFunc() {
 // OOP: Encapsulation - Making states / properties of an object private and only allow access via the object's method (setter / getter function)
 // OOP: Inheritance - Bundle common code into a parent class and extend to child classes
 
-function Animal () {
-    this.numOfEyes = 2
-    this.numOfTail = 1
-    this.numOfLegs = 4
+// function Animal () {
+//     this.numOfEyes = 2
+//     this.numOfTail = 1
+//     this.numOfLegs = 4
+// }
+
+// Animal.prototype.eat = function() {console.log("nom nom")}
+
+// function Dog (color) {
+//     this.color = color
+// }
+
+// function Cat (color) {
+//     this.color = color
+// }
+// Cat.prototype = Object.create(Animal.prototype)
+// Cat.prototype.scratch = function() {console.log("scratch")}
+// const tom = new Cat('orange')
+// console.log(tom)
+
+
+// ES Classes
+
+// class Animal {
+//     #color
+//     #hasTail
+//     constructor (color, hasTail) {
+//         this.#color = color;
+//         this.#hasTail = hasTail
+//     }
+//     publicGetColor () {
+//         return this.#color
+//     }
+//     publicSetColor (color) {
+//         this.#color = color
+//     }
+//     publicGetHasTail () {
+//         return this.#hasTail
+//     }
+//     publicSetHasTail (hasTail) {
+//         this.#hasTail = hasTail
+//     }
+//     publicEat() {
+//         return `Nom Nom Nom`
+//     }
+// }
+
+// class Dog {
+//     #numOfPuppies
+//     constructor (numOfPuppies) {
+//         this.#numOfPuppies = numOfPuppies
+//     }
+//     publicGetNumOfPuppies () {
+//         return this.#numOfPuppies
+//     }
+//     publicSetNumOfPuppies (num) {
+//         this.#numOfPuppies = num
+//     }
+//     publicBark () {return `Ruff Ruff Ruff`}
+// }
+
+// class Cat extends Animal {
+//     // to make a property private
+//     #numOfKittens;
+//     constructor (numOfKittens, color, hasTail) {
+//         super(color, hasTail)
+//         this.#numOfKittens = numOfKittens
+//     }
+//     publicGetNumOfKittens () {
+//         return this.#numOfKittens
+//     }
+//     publicSetNumOfKittens (num) {
+//         this.#numOfKittens = num
+//     }
+//     publicMeow () {return `Meow Meow Meow`}
+// }
+
+// const myAnimal = new Animal("brown", true)
+// const myCat = new Cat("5", "orange", true)
+// console.log(myCat)
+// console.log(myCat.publicGetColor())
+
+
+// Closures & Immediately Invoked Function Expressions (IIFE)
+
+// Closure
+// Higher order function - a parent function that takes in or returns a function
+function multiply (a) {
+    return function (b) {
+        return a * b
+    }
 }
 
-Animal.prototype.eat = function() {console.log("nom nom")}
+const multiply2 = (a) => (b) => a * b
 
-function Dog (color) {
-    this.color = color
-}
+const returnedFn = multiply(4)
+const result = returnedFn(5)
+console.log(result)
 
-function Cat (color) {
-    this.color = color
-}
-Cat.prototype = Object.create(Animal.prototype)
-Cat.prototype.scratch = function() {console.log("scratch")}
-const tom = new Cat('orange')
-console.log(tom)
-
+// A closure is the combination of a function bundled together (enclosed) with references to its surrounding state 
+// (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript,
+//  closures are created every time a function is created, at function creation time.
