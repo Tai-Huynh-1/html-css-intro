@@ -752,12 +752,14 @@ function myFunc() {
 // ES Classes
 
 // class Animal {
+//     // declare properties for readability
 //     #color
 //     #hasTail
 //     constructor (color, hasTail) {
 //         this.#color = color;
 //         this.#hasTail = hasTail
 //     }
+
 //     publicGetColor () {
 //         return this.#color
 //     }
@@ -772,6 +774,10 @@ function myFunc() {
 //     }
 //     publicEat() {
 //         return `Nom Nom Nom`
+//     }
+
+//     publicSleep() {
+//         return `Animal sleeping`
 //     }
 // }
 
@@ -789,11 +795,14 @@ function myFunc() {
 //     publicBark () {return `Ruff Ruff Ruff`}
 // }
 
+// const myDog = new Dog(5)
+// console.log(myDog)
+
 // class Cat extends Animal {
 //     // to make a property private
 //     #numOfKittens;
-//     constructor (numOfKittens, color, hasTail) {
-//         super(color, hasTail)
+//     constructor (numOfKittens, color, hasTail) { // Cat constructor
+//         super(color, hasTail) // super invokes the parent (or extended class) constructor function to set the properties
 //         this.#numOfKittens = numOfKittens
 //     }
 //     publicGetNumOfKittens () {
@@ -803,9 +812,11 @@ function myFunc() {
 //         this.#numOfKittens = num
 //     }
 //     publicMeow () {return `Meow Meow Meow`}
+
+//     // OOP: Polymorphism: Overriding parent's method
+//     publicSleep() {return `Cat sleeping`}
 // }
 
-// const myAnimal = new Animal("brown", true)
 // const myCat = new Cat("5", "orange", true)
 // console.log(myCat)
 // console.log(myCat.publicGetColor())
@@ -816,17 +827,31 @@ function myFunc() {
 // Closure
 // Higher order function - a parent function that takes in or returns a function
 function multiply (a) {
+    // const fn = function (b) {
+    //     return a * b
+    // }
     return function (b) {
         return a * b
     }
 }
 
-const multiply2 = (a) => (b) => a * b
+// function random (c) {
+//     console.log(c)
+//     return
+// }
+// console.log('c from outside', c)
+
+// console.log(multiply(4)(5))
 
 const returnedFn = multiply(4)
 const result = returnedFn(5)
-console.log(result)
+console.log(result) // returns 20
+
+// const multiply2 = (a) => (b) => a * b
+// console.log(multiply2(5)(5))
+
 
 // A closure is the combination of a function bundled together (enclosed) with references to its surrounding state 
 // (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript,
 //  closures are created every time a function is created, at function creation time.
+
