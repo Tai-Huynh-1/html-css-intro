@@ -613,15 +613,15 @@
 // // console.log(spreadObjects({name: "cat"}, {name: "dog"}))
 
 // // ES6 Object destructuring (arrays and objects)
-// const car = {
-//     year: 2000,
-//     make: 'toyota',
-//     model: 'celica',
-//     address: {
-//         mailing: '123 Main St',
-//         shipping: '321 Wall St'
-//     }
-// }
+const car = {
+    year: 2000,
+    make: 'toyota',
+    model: 'celica',
+    address: {
+        mailing: '123 Main St',
+        shipping: '321 Wall St'
+    }
+}
 // const modelName = car.model
 // const modelYear = car.year
 // console.log(modelName)
