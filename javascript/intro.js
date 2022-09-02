@@ -826,14 +826,14 @@ function myFunc() {
 
 // Closure
 // Higher order function - a parent function that takes in or returns a function
-function multiply (a) {
-    // const fn = function (b) {
-    //     return a * b
-    // }
-    return function (b) {
-        return a * b
-    }
-}
+// function multiply (a) {
+//     // const fn = function (b) {
+//     //     return a * b
+//     // }
+//     return function (b) {
+//         return a * b
+//     }
+// }
 
 // function random (c) {
 //     console.log(c)
@@ -843,9 +843,9 @@ function multiply (a) {
 
 // console.log(multiply(4)(5))
 
-const returnedFn = multiply(4)
-const result = returnedFn(5)
-console.log(result) // returns 20
+// const returnedFn = multiply(4)
+// const result = returnedFn(5)
+// console.log(result) // returns 20
 
 // const multiply2 = (a) => (b) => a * b
 // console.log(multiply2(5)(5))
@@ -855,3 +855,4 @@ console.log(result) // returns 20
 // (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript,
 //  closures are created every time a function is created, at function creation time.
 
+// ====== OOP Test
