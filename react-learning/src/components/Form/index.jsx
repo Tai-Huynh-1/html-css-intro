@@ -45,9 +45,15 @@ function Form ({title}) {
 
     console.log(form)
 
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        console.log(event)
+        // submit the form information to the backend server to create a user in the database
+    }
+
     return (
         <>
-            <form className="flex flex-col border border-black mt-4 w-full md:w-6/12 lg:w-3/12 mx-auto p-4 space-y-4">
+            <form onSubmit={handleSubmit} className="flex flex-col border border-black mt-4 w-full md:w-6/12 lg:w-3/12 mx-auto p-4 space-y-4">
                 <h1 className="text-3xl"><strong>{title}</strong></h1>
 
                 <div className="space-y-4">
