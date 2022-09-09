@@ -1,14 +1,25 @@
-import { useState } from "react"
 
-const CartCounter = () => {
-    const [counter, setCounter] = useState(1)
 
+const CartCounter = ({counter, setCounter}) => {
+    // const pageContent = {
+    //     greet: () => console.log("animal: Hi")
+    // }
+
+    // const layout = {
+    //     bark: () => console.log("ruff ruff"),
+    //     child: pageContent
+    // }
+
+    // layout.child.greet = () => console.log("dog greeting")
+    // layout.child.greet()
+    // // ===============
+    
     const handleDecrement = () => {
         setCounter(prevCounter => prevCounter === 1 ? 1 : prevCounter - 1)
     }
 
     const handleIncrement = () => {
-        setCounter(prevCounter => prevCounter + 1)
+        setCounter(prevCounter => prevCounter === 10 ? 10 : prevCounter + 1)
     }
 
     return (

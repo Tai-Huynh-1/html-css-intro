@@ -1,7 +1,12 @@
+import { useState } from "react"
 import CartCounter from "./CartCounter"
 import chair1 from "../../assets/e-comm/chair1.webp"
 
-const CartItem2 = () => {
+const CartItem2 = (props) => {
+    console.log("props from cart item component", props)
+
+    const [counter, setCounter] = useState(1)
+
     return (
         <div className="border border-black flex py-6">
             <div className="w-3/12 flex">
@@ -19,12 +24,12 @@ const CartItem2 = () => {
                 </div>
 
                 <div className="w-full md:w-7/12">
-                    <CartCounter />
+                    <CartCounter counter={counter} setCounter={setCounter} />
                 </div>
             </div>
 
             <h3 className="w-2/12 text-lg">
-                <strong>$149.99</strong>
+                <strong>{`(${counter})`} - ${counter * 149.99}</strong>
             </h3>
         </div>
     )
