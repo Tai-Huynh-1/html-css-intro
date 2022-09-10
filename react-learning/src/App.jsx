@@ -16,15 +16,15 @@ function App() {
     <div className="App">
 
       <Layout>
-          <PageContainer>
+          {/* <PageContainer>
             <div>
               <LeftSide />
               <RightSide />
             </div>
-          </PageContainer>
-          {/* <div className='w-full lg:w-7/12'>
+          </PageContainer> */}
+          <div className='w-full lg:w-7/12'>
               <CartItem2 /> 
-          </div> */}
+          </div>
       </Layout>
 
     </div>

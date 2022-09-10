@@ -1,6 +1,9 @@
+import { useState } from "react"
 
 
 const CartCounter = ({counter, setCounter}) => {
+    const [loading, setLoading] = useState(true)
+
     // const pageContent = {
     //     greet: () => console.log("animal: Hi")
     // }
@@ -34,7 +37,7 @@ const CartCounter = ({counter, setCounter}) => {
             </div>
 
             <div className="w-5/12 flex flex-col">
-                <button className="text-orange-500 my-auto"><strong>REMOVE</strong></button>
+                <button className="text-orange-500 my-auto" onClick={(event) => console.log('event', event)}><strong>REMOVE</strong></button>
             </div>
         </div>
     )

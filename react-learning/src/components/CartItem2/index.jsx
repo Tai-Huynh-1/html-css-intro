@@ -1,6 +1,7 @@
 import { useState } from "react"
 import CartCounter from "./CartCounter"
 import chair1 from "../../assets/e-comm/chair1.webp"
+import { MyReactComponent } from "./Mock/index"
 
 const CartItem2 = (props) => {
     console.log("props from cart item component", props)
@@ -31,6 +32,8 @@ const CartItem2 = (props) => {
             <h3 className="w-2/12 text-lg">
                 <strong>{`(${counter})`} - ${counter * 149.99}</strong>
             </h3>
+
+            {MyReactComponent}
         </div>
     )
 }
