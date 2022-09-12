@@ -1,6 +1,6 @@
 const Layout = (props) => {
 
-    console.log("props", props)
+    // console.log("props from layout", props)
 
     const section3 = <div>Section 3</div>
     
