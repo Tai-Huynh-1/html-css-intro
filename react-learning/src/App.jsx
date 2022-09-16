@@ -50,6 +50,15 @@ import DataContainer from './components/DataContainer';
 
 function App() {
   const [hide, setHide] = useState(false)
+  const [counter, setCounter] = useState(1)
+
+  const inc = () => {
+    setCounter(counter + 1)
+}
+
+  const dec = () => {
+      setCounter(counter - 1)
+  }
 
   const formToggler = () => {
     setHide(prevState => !prevState)
@@ -61,13 +70,27 @@ function App() {
       <Layout>
           {/* <SplitPane left={<Contacts />} right={<Chat />} /> */}
 
-          {!hide ? <DataContainer /> : null}
+          {!hide ? <DataContainer counter={counter} /> : null}
           <button 
             className='p-4 rounded-md bg-emerald-500 w-4/12' 
             onClick={formToggler}
           >
               Hide Form
           </button>
+          <button 
+            className='p-4 rounded-md bg-emerald-500 w-4/12' 
+            onClick={inc}
+          >
+              Increment
+          </button>
+          <button 
+            className='p-4 rounded-md bg-emerald-500 w-4/12' 
+            onClick={dec}
+          >
+              Decrement
+          </button>
+
+
 
           {/* <PageContainer>
               <LeftSide />
