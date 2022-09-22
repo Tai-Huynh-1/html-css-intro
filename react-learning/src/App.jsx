@@ -5,6 +5,7 @@ import Tag from "./components/common/Tag"
 import CartItem2 from './components/CartItem2';
 import Layout from './components/common/Layout';
 import DataContainer from './components/DataContainer';
+import Bank from './components/Bank';
 
 // const ChildComponentA = ({counter, setCounter}) => {
 //   return (<div>Counter from child component A: {counter}</div>)
@@ -64,6 +65,7 @@ function App() {
     setHide(prevState => !prevState)
   }
 
+
   return (
     <div className="App">
 
@@ -71,7 +73,7 @@ function App() {
           {/* <SplitPane left={<Contacts />} right={<Chat />} /> */}
 
           {!hide ? <DataContainer counter={counter} /> : null}
-          <button 
+          {/* <button 
             className='p-4 rounded-md bg-emerald-500 w-4/12' 
             onClick={formToggler}
           >
@@ -88,9 +90,11 @@ function App() {
             onClick={dec}
           >
               Decrement
-          </button>
+          </button> */}
 
 
+          <Bank />
+          <CartItem2 /> 
 
           {/* <PageContainer>
               <LeftSide />

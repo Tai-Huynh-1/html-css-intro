@@ -1,9 +1,10 @@
 import { useState } from "react"
+import { useSelector } from "react-redux"
 
 
 const CartCounter = ({counter, setCounter}) => {
     const [loading, setLoading] = useState(true)
-
+    const balance = useSelector(state => state)
     // const pageContent = {
     //     greet: () => console.log("animal: Hi")
     // }
@@ -25,6 +26,7 @@ const CartCounter = ({counter, setCounter}) => {
         setCounter(prevCounter => prevCounter === 10 ? 10 : prevCounter + 1)
     }
 
+    console.log('balance from cart component', balance)
     return (
         <div className="flex">
             {/* Counter */}
