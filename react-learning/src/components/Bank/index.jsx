@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { deposit, withdraw } from '../../redux/balance/balanceActions'
 
 const Bank = () => {
-    const balance = useSelector(state => state) // used to access redux state
+    const balance = useSelector(states => states.bankBalance) // used to access redux state
     const dispatch = useDispatch()
 
     const handleDeposit = () => {

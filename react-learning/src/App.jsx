@@ -6,6 +6,7 @@ import CartItem2 from './components/CartItem2';
 import Layout from './components/common/Layout';
 import DataContainer from './components/DataContainer';
 import Bank from './components/Bank';
+import Pizza from './components/Pizza';
 
 // const ChildComponentA = ({counter, setCounter}) => {
 //   return (<div>Counter from child component A: {counter}</div>)
@@ -94,6 +95,7 @@ function App() {
 
 
           <Bank />
+          <Pizza />
           <CartItem2 /> 
 
           {/* <PageContainer>

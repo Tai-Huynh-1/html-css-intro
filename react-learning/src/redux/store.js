@@ -1,8 +1,7 @@
 import { createStore } from 'redux'
-import balanceReducer from './balance/balanceReducer'
-// import in Pizza Reducer to use inside of createStore
+import rootReducer from './rootReducer'
 
 // redux global state store
-const store = createStore(balanceReducer)
+const store = createStore(rootReducer)
 
 export default store
