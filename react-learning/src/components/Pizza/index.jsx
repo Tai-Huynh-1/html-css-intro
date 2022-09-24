@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { buyPizza, returnPizza } from '../../redux/pizza/pizzaActions'
+import { buyPizza, returnPizza, resetPizza } from '../../redux/pizza/pizzaActions'
 
 
 const Pizza = () => {
@@ -13,12 +13,17 @@ const Pizza = () => {
     }
 
     const handleBuy = () => {
-        const action = buyPizza(pizzaToBuy)
+        const action = buyPizza(pizzaToBuy) // {type: "BUY", payload: pizzaToBuy}
         dispatch(action)
     }
 
     const handleReturn = () => {
         const action = returnPizza(pizzaToBuy)
+        dispatch(action)
+    }
+
+    const handleReset = () => {
+        const action = resetPizza()
         dispatch(action)
     }
 
@@ -35,6 +40,7 @@ const Pizza = () => {
             <br />
             <button className='border p-2 rounded-md' onClick={handleBuy}>Buy Pizza</button>
             <button className='border p-2 rounded-md' onClick={handleReturn}>Return Pizza</button>
+            <button className='border p-2 rounded-md' onClick={handleReset}>Reset Pizza</button>
         </div>
     )
 }
