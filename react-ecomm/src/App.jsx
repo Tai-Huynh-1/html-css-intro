@@ -27,11 +27,11 @@ function App() {
 
 					<Route path="cart" element={<Cart />} />
 
-					<Route path="teams">
+					{/* <Route path="teams">
 						<Route path=":teamId" />
 						<Route path="new" />
 						<Route index />
-					</Route>
+					</Route> */}
 				</Route>
 			</Routes>
 		</BrowserRouter>
