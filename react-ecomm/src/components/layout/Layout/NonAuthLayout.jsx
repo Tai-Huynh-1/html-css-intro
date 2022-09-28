@@ -1,9 +1,10 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 const NonAuthLayout = ({ children }) => {
 	return (
 		<div>
-			NonAuthLayout
+			<Navbar />
 			{children}
 		</div>
 	);

@@ -6,6 +6,8 @@ import Auth from "./pages/auth";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Cart from "./pages/cart";
+import AboutUs from "./pages/about-us";
+import Contact from "./pages/contact";
 
 function App() {
 	return (
@@ -26,6 +28,27 @@ function App() {
 					</Route>
 
 					<Route path="cart" element={<Cart />} />
+
+					<Route
+						path="about-us"
+						element={<AboutUs />}
+					/>
+
+					<Route
+						path="contact"
+						element={<Contact />}
+					/>
+
+					<Route
+						path="products"
+						// element={<Contact />}
+					>
+						{/* :category is a slug (unique id) such as "furniture" or "clothing" */}
+						<Route path=":category">
+							{/* For the chair description page */}
+							<Route path="chair" />
+						</Route>
+					</Route>
 
 					{/* <Route path="teams">
 						<Route path=":teamId" />
